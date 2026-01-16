@@ -3,7 +3,7 @@
 <br>ACG has grown aggressively over the past 3 years. Revenue is strong—but leadership is uneasy. With a steady stream of negative reviews coming in.
 <br>Shareholders are determined to get to the root cause of the issues the company is facing, as such the following questions were raised:
 
-### <br>❗ Questions: 
+### <br>❗ Business Questions: 
 
 <br>⁉️ Which support channels correlate with poor satisfaction?
 <br>⁉️ Does response time actually impact CSAT—or is that assumed?
@@ -33,8 +33,14 @@ We can be certain that non-delivered orders directly corelate to negative review
 The last major factor contributing to low ratings is the support provided, we can see that when it comes to un-resolved issues there is an 20.37% increase of negative reviews. A staggering total of 2,387 cases out of 9139 were not resolved, that leaves a staggering 26% of unresolved cases in total which highly contributes to negative reviews.
 
 #### 📘 Re-evaluate SLAs for support and locate breaches. Most common issues in these cases can be stemmed from either process gaps (knowledge gaps) or inadequate headcount (team volume). Analyze ticket volume, locate peak times and shift team schedule to accommodate process changes (additional training). Additionally, if support is provided externally, look into new options which provide better service, prepare for transition if it comes down to changing vendors.
+<h2 align = "center">
+ Final Dashboard:
+</h2>
+<p align = "center">
+<img src="https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Dash.png" style="width:70%; height:auto;" />
+</p>
 
-### ⚠️ Data Cleaning ⚠️
+<h2 align = "center"> ⚠️ Data Cleaning ⚠️ </h2>
 
 For the purposes of this project we have followed a specific sequence of steps in order to ensure the data is as accurate as possible:
 
