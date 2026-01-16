@@ -34,3 +34,15 @@ The last major factor contributing to low ratings is the support provided, we ca
 
 #### 📘 Re-evaluate SLAs for support and locate breaches. Most common issues in these cases can be stemmed from either process gaps (knowledge gaps) or inadequate headcount (team volume). Analyze ticket volume, locate peak times and shift team schedule to accommodate process changes (additional training). Additionally, if support is provided externally, look into new options which provide better service, prepare for transition if it comes down to changing vendors.
 
+### ⚠️ Data Cleaning ⚠️
+
+For the purposes of this project we have followed a specific sequence of steps in order to ensure the data is as accurate as possible:
+
+1. Removing duplicate entries - reducing the number of lines we are working with.
+2. Handling Blank/Null Values and filling in what we can using the data that we have.
+3. Standardizing all columns that we will use in future analysis(adjusting each column so that the entries are unified).
+4. Adjusting column data type(This would almost always include adjusting the data format to the standard which MySQL utilizes(short date) and removing string entries from numerical value.
+5. Adding data groups - example if we want to know which customers in DB are legal adults, we will create a column and categorize customers accordingly
+6. Removing columns which will not be used
+
+The code on how we achieved the steps above along with complete comments explaining each step can be found in the  [Data Cleaning & Prepping file ](https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Data%20Cleaning%20%26%20Prepping.sql) in this project.
