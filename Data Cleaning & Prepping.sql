@@ -43,14 +43,6 @@ SELECT *
 FROM customer_statistics
 LIMIT 0, 100000;
 
--- When it comes to data cleaning there is a specific sequence of steps that we must go through in order to ensure the data is accurate
--- 1. Removing duplicate entries, reducing the number of lines we are working with
--- 2. Handling Blank/Null Values and filling in what we can using the data that we have
--- 3. Standardizing all columns that we will use in future analysis(adjusting each column so that the entries are unified)
--- 4. Adjusting column data type(This would almost always include adjusting the data format to the standard which MySQL utilizes(short date ) and removing string entries from numerical values)
--- 5. Adding data groups, for example if we want to know which customers in DB are legal adults, we will create a column and categorize customers accordingly
--- 6. Removing columns which will not be used
-
 -- Before we begin working on the data it is best practice to never work on raw data, rather we will create a staging version which we will be working on, this way we have a lifeline to go back if it comes to data loss
 -- First we must create an identical copy of the table imported
 CREATE TABLE `customer_statistics_staging` (
