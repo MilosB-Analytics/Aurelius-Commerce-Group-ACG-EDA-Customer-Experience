@@ -25,8 +25,8 @@ FROM customer_statistics_staging3;
 -- Now here we can look at the total scores segregated by support_channel and draw a conclusion, however we must understand deeper if the total score is leveraged by a large number of negative scores or 
 -- a smaller number of worst possible scores, and for us to understand this we must define what categorizes as a negative review. As such for this purpose we will use the global standard:
 
--- 0-6 - Demoters,  Unhappy customers who can damage the brand through negative word-of-mouth.
--- 7-8 - Passives, Satisfied but unenthusiastic; vulnerable to competitor offers.
+-- 0-6 - Demoters, Unhappy customers who can damage the brand through negative word-of-mouth.
+-- 7-8 - Passives, satisfied but unenthusiastic; vulnerable to competitor offers.
 -- 9-10 - Promoters, Loyal, enthusiastic customers who will likely keep buying and refer others.
 
 -- Range: -100 to +100.
@@ -40,7 +40,7 @@ GROUP BY support_channel
 ORDER BY average_score;
 
 -- Looking at the overall average we can see that the only channel that has a positive score is tickets logged over the phone, which is not by a large margin, 0.48
--- This does provide some insight on the overall situation, however we will dive deeper so that we may understand the overall numbers which are driving these results
+-- This does provide some insight on the overall situation; however, we will dive deeper so that we may understand the overall numbers which are driving these results
 
 WITH negative_num AS (
 
@@ -93,7 +93,7 @@ FROM customer_statistics_staging3
 GROUP BY support_channel
 ORDER BY avg_response_time;
 
--- Running the same query to find the overall average segregated by channel we can see an interesting fact, the numbers line up for the Phone channel, however the App channel which has the lowest score, has the second best response time
+-- Running the same query to find the overall average segregated by channel we can see an interesting fact, the numbers line up for the Phone channel, however the App channel which has the lowest score, has the second-best response time
 
 WITH negative_score AS (
 SELECT
@@ -133,7 +133,7 @@ JOIN positive_score ps
     
 -- When cross-referencing values for positive and negative scores we can see interestingly enough that the negative scores actually have a shorter average resolution time when compared to positive scores
 -- We have also compared both longest and shortest resolution times, this provided little insight as they are almost identical
--- We can draw the conclusion that resolution times are not directly indicative of low nps scores
+-- We can draw the conclusion that resolution times are not directly indicative of low npc scores
 
 -- Since time for resolution is not the main driver, the next best thing to check would be the number of chases that were actually resolved
 
@@ -152,18 +152,34 @@ COUNT(issue_resolved) AS positive_unresolved
 FROM customer_statistics_staging3
 WHERE issue_resolved = 'NO' AND nps_score > 0
 GROUP BY support_channel
-)
-
+),
+percentage_difference AS (
 SELECT
 nc.support_channel,
 negative_unresolved,
-positive_unresolved
+positive_unresolved,
+ROUND((positive_unresolved / negative_unresolved) * 100,2) - 100 AS percent_increase
 FROM negative_unresolved_count nc
 JOIN positive_unresolved_count pc
 	ON nc.support_channel = pc.support_channel
-GROUP BY nc.support_channel;
+),
+total_percent AS (
+SELECT 
+SUM(percent_increase) AS total_difference
+FROM percentage_difference
+)
+SELECT
+support_channel,
+negative_unresolved,
+positive_unresolved,
+(negative_unresolved + positive_unresolved) AS total_unresolved,
+ROUND((positive_unresolved / negative_unresolved) * 100,2) - 100 AS percent_increase,
+total_difference
+FROM percentage_difference
+JOIN total_percent
 
 -- After running a quick query, the results show that the number of un-resolved cases in the negative nps score are significantly higher than in the positive nps group
+-- A quick calculation shows that the overall negative scores are 20.37% higher when cases are not resolved.
 
 -- Are repeat customers more forgiving than first-time buyers?
 
@@ -231,7 +247,7 @@ FROM customer_statistics_staging3
 GROUP BY days_to_deliver
 ORDER BY days_to_deliver
 
--- We can see that there is 491 orders which were not completed at all, these could be refunds, however a percentage of these could be lost orders etc. causing nps to go down
+-- We can see that there are 491 orders which were not completed at all, these could be refunds, however a percentage of these could be lost orders etc. causing nps to go down
 -- The company standard is to have all orders delivered between 1-21 business days, we need to also check how many orders were completed after the agreed date
 
 WITH delivery_days AS (
@@ -247,6 +263,13 @@ SELECT
 SUM(late_orders),
 MAX(late_orders)
 FROM delivery_days
+
+SELECT
+AVG(nps_Score),
+COUNT(*) AS late_orders
+FROM customer_statistics_staging3
+WHERE DATEDIFF(delivery_date, order_Date) > 21
+
 
 -- We found our root problem with the extremely low nps score, the main driver is late delivery/no delivery, from here we can build upon a conclusion and provide clear next steps and a path forward for the company
 -- Next let's take a look at the failed orders, to determine what percentage are refunds
@@ -265,20 +288,20 @@ FROM customer_statistics_staging3
 WHERE DATEDIFF(delivery_date, order_date) IS NULL
 AND customer_comments = 'Not Delivered'
 )
-
 SELECT
 num_not_delivered,
 failed_confirmed_num,
 ROUND((failed_confirmed_num / num_not_delivered) * 100,2) AS failed_delivery_percentage
 FROM not_delivered_count
-JOIN confirmed_failed_deliveries
+JOIN confirmed_failed_deliveries 
+
 
 -- After analyzing further we can be certain that at least 17.31% of all non-delivered orders were either never sent or were lost, the majority of the other 82.69% will most likely be refunds requested due to late shipment
 
 SELECT *
 FROM customer_statistics_staging3
 
--- In order to determine the risk of loosing high income/loyal customers we need to first find who they are and see what nps score they gave
+-- In order to determine the risk of losing high income/loyal customers we need to first find who they are and see what nps score they gave
 -- To start off we will find the top customers by income and then segregate them by country, for the purposes of this project we will find the top 10
 
 WITH top_customers AS (
@@ -333,4 +356,5 @@ WHERE ranking < 11
 
 SELECT *
 FROM customer_statistics_staging3
+LIMIT 0,10000
 
