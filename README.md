@@ -3,6 +3,11 @@
 <br>ACG has grown aggressively over the past 3 years. Revenue is strong—but leadership is uneasy. With a steady stream of negative reviews coming in.
 <br>Shareholders are determined to get to the root cause of the issues the company is facing, as such the following questions were raised:
 
+<h1>Complete Breakdown</h1>
+
+A more in-depth analysis with on how these answers were derived can be found in the [Data Visualization & Storytelling file.](https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Data%20Visualization/%20Data%20Visualization%20&%20Storytelling.md)
+
+
 ### <br>❗ Business Questions: 
 
 <br>⁉️ Which support channels correlate with poor satisfaction?
@@ -19,9 +24,8 @@
 <br>✔️ Yes, we can see that the overall delays are the same across all products.
 <br>✔️ 60% of the highest value customers are from the United States and 30% are from Germany, the risk of losing them is high as their average score comes up to a -0.22.
 
-<br>A more in-depth analysis with on how were these answers derived can be found in the [Data Visualization & Storytelling file.](https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Data%20Visualization/%20Data%20Visualization%20&%20Storytelling.md)
 
-### <br>💹 Recommended Next Steps:
+<h1>💹 Recommended Next Steps</h1>
 When looking through the scores of top customers per country we were able to see that the overall number of positive scores is extremely low, this brings a real risk of losing them, further analysis shows that the main driver for negative scores overall is due to orders failing on delivery, out of the 491 total non-delivered orders we can be certain that 17.31% were lost, unfortunately the customers did not specify which orders are refunds so we cannot be certain of the exact amount of orders lost vs refunds, taking into account that not all customers specify when an order has failed, this number is likely much larger.
 
 #### 📘 Investigate the delivery routes/process in order to locate the point of failure, possibly look at changing delivery vendors if significant % is being lost in transport, prepare for transition if it comes down to changing vendors.
@@ -33,14 +37,14 @@ We can be certain that non-delivered orders directly corelate to negative review
 The last major factor contributing to low ratings is the support provided, we can see that when it comes to un-resolved issues there is an 20.37% increase of negative reviews. A staggering total of 2,387 cases out of 9139 were not resolved, that leaves a staggering 26% of unresolved cases in total which highly contributes to negative reviews.
 
 #### 📘 Re-evaluate SLAs for support and locate breaches. Most common issues in these cases can be stemmed from either process gaps (knowledge gaps) or inadequate headcount (team volume). Analyze ticket volume, locate peak times and shift team schedule to accommodate process changes (additional training). Additionally, if support is provided externally, look into new options which provide better service, prepare for transition if it comes down to changing vendors.
-<h2 align = "center">
+<h1 align = "center">
  Final Dashboard:
-</h2>
+</h1>
 <p align = "center">
 <img src="https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Dashboard.png" style="width:70%; height:auto;" />
 </p>
 
-<h2 align = "center"> ⚠️ Data Cleaning ⚠️ </h2>
+<h1 align = "center"> ⚠️ Data Cleaning ⚠️ </h1>
 
 For the purposes of this project we have followed a specific sequence of steps in order to ensure the data is as accurate as possible:
 
