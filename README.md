@@ -22,7 +22,7 @@
 <br>A more in-depth analysis with on how were these answers derived can be found in the Data Visualization & Storytelling file.
 
 ### <br>💹 Recommended Next Steps:
-When looking through the scores of top customers per country we were only able to find 3 positive scores, this brings a real risk of losing them, further analysis shows that the main driver for negative scores overall is due to orders failing on delivery, out of the 491 total non-delivered orders we can be certain that 17.31% were lost, unfortunately the customers did not specify which orders are refunds so we cannot be certain of the exact amount of orders lost vs refunds, taking into account that not all customers specify when an order has failed, this number is likely much larger.
+When looking through the scores of top customers per country we were able to see that the overall number of positive scores is extremely low, this brings a real risk of losing them, further analysis shows that the main driver for negative scores overall is due to orders failing on delivery, out of the 491 total non-delivered orders we can be certain that 17.31% were lost, unfortunately the customers did not specify which orders are refunds so we cannot be certain of the exact amount of orders lost vs refunds, taking into account that not all customers specify when an order has failed, this number is likely much larger.
 
 #### 📘 Investigate the delivery routes/process in order to locate the point of failure, possibly look at changing delivery vendors if significant % is being lost in transport, prepare for transition if it comes down to changing vendors.
 
