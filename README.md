@@ -37,7 +37,7 @@ The last major factor contributing to low ratings is the support provided, we ca
  Final Dashboard:
 </h2>
 <p align = "center">
-<img src="https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Dash.png" style="width:70%; height:auto;" />
+<img src="https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Dashboard.png" style="width:70%; height:auto;" />
 </p>
 
 <h2 align = "center"> ⚠️ Data Cleaning ⚠️ </h2>
