@@ -19,7 +19,7 @@
 <br>✔️ Yes, we can see that the overall delays are the same across all products.
 <br>✔️ 60% of the highest value customers are from the United States and 30% are from Germany, the risk of losing them is high as their average score comes up to a -0.22.
 
-<br>A more in-depth analysis with on how were these answers derived can be found in the Data Visualization & Storytelling file.
+<br>A more in-depth analysis with on how were these answers derived can be found in the [Data Visualization & Storytelling file.](https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Data%20Visualization/%20Data%20Visualization%20&%20Storytelling.md)
 
 ### <br>💹 Recommended Next Steps:
 When looking through the scores of top customers per country we were able to see that the overall number of positive scores is extremely low, this brings a real risk of losing them, further analysis shows that the main driver for negative scores overall is due to orders failing on delivery, out of the 491 total non-delivered orders we can be certain that 17.31% were lost, unfortunately the customers did not specify which orders are refunds so we cannot be certain of the exact amount of orders lost vs refunds, taking into account that not all customers specify when an order has failed, this number is likely much larger.
