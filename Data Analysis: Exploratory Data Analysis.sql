@@ -301,6 +301,15 @@ JOIN confirmed_failed_deliveries
 SELECT *
 FROM customer_statistics_staging3
 
+SELECT 
+ROUND(AVG(nps_score),2) average_score,
+MIN(nps_score) lowest_score,
+COUNT(order_id) total_orders,
+product_category
+FROM customer_statistics_staging3
+WHERE DATEDIFF(delivery_date, order_date) IS NULL AND nps_score < 0
+GROUP BY product_category
+
 -- In order to determine the risk of losing high income/loyal customers we need to first find who they are and see what nps score they gave
 -- To start off we will find the top customers by income and then segregate them by country, for the purposes of this project we will find the top 10
 
@@ -350,8 +359,7 @@ SELECT
 *
 FROM largest_sale_ranking
 JOIN avg_top_score
-WHERE ranking < 11 
-
+WHERE ranking < 700
 -- We can see that there are only 3 positive nps scores among the high value customers, and 10 with negative scores, the rest did not leave a score, with this we can conclude that the risk of losing them is valid.
 
 SELECT *
