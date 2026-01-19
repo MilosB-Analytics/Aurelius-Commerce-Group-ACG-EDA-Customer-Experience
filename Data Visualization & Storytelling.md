@@ -1,5 +1,0 @@
-### Result Breakdown:
-<h1 align = "center">ACG Dashboard </h1>
-<p align="center">
- <img src="https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Dash.png" style="width:100%; height:auto;" />
-</p>
