@@ -7,6 +7,7 @@
 
 A more in-depth analysis with on how these answers were derived can be found in the [Data Visualization & Storytelling file.](https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Data%20Visualization/%20Data%20Visualization%20&%20Storytelling.md)
 
+Complete code for this project can be found in the [Data Analysis: Exploratory Data Analysis file](https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Data%20Analysis%3A%20Exploratory%20Data%20Analysis.sql)
 
 ### <br>❗ Business Questions: 
 
