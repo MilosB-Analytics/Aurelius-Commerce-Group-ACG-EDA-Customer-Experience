@@ -1,7 +1,7 @@
 ### Result Breakdown:
 <h1 align = "center">ACG Dashboard </h1>
 <p align="center">
- <img src="https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Dash.png" style="width:100%; height:auto;" />
+ <img src="https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Dashboard.png" style="width:100%; height:auto;" />
 </p>
 
 <h1 align = "center"> Business Questions & Answers </h1>
@@ -24,7 +24,7 @@
 <br>✔️ Yes, we can see that the overall delays are the same across all products.
 </p>
 <p>
-<br>⁉️ Which are high value customers and what is the risk of losing them?
+⁉️ Which are high value customers and what is the risk of losing them?
 <br>✔️ 60% of the highest value customers are from the United States and 30% are from Germany, the risk of losing them is high as their average score comes up to a -0.22.
 </p>
 
