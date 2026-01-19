@@ -7,7 +7,7 @@
 
 A more in-depth analysis with on how these answers were derived can be found in the [Data Visualization & Storytelling file.](https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Data%20Visualization/%20Data%20Visualization%20&%20Storytelling.md)
 
-Complete code for this project can be found in the [Data Analysis: Exploratory Data Analysis file](https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Data%20Analysis%3A%20Exploratory%20Data%20Analysis.sql)
+Complete code for this project can be found in the [Data Analysis: Exploratory Data Analysis file.](https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Data%20Analysis%3A%20Exploratory%20Data%20Analysis.sql)
 
 ### <br>❗ Business Questions: 
 
@@ -56,4 +56,4 @@ For the purposes of this project we have followed a specific sequence of steps i
 5. Adding data groups - example if we want to know which customers in DB are legal adults, we will create a column and categorize customers accordingly
 6. Removing columns which will not be used
 
-The code on how we achieved the steps above along with complete comments explaining each step can be found in the  [Data Cleaning & Prepping file ](https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Data%20Cleaning%20%26%20Prepping.sql) in this project.
+The code on how we achieved the steps above along with complete comments explaining each step can be found in the  [Data Cleaning & Prepping file.](https://github.com/MilosB-Analytics/Aurelius-Commerce-Group-ACG-EDA-Customer-Experience/blob/main/Data%20Cleaning%20%26%20Prepping.sql) in this project.
